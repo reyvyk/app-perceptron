@@ -11,7 +11,7 @@ router.post('/', (req, res, next) => {
   let entryIdade   = idade > 18 ? 1 : 0;
   let entryMoradia = moradia ? 1 : 0;
 
-  let result = myNetwork.active([entryIdade, entrySalario, entryMoradia]);
+  let result = myNetwork.activate([entryIdade, entrySalario, entryMoradia]);
 
   if (result[0] > 0.5) {
     res.send({ message: 'aprovado' })
