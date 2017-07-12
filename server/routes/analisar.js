@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
   if (result[0] > 0.5) {
     res.send({ message: 'aprovado' })
   } else {
-    res.send({ message: 'não aprovado' })
+    res.status(403).send({ message: 'não aprovado' })
   }
 });
 
