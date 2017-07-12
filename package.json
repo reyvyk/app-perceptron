@@ -10,6 +10,8 @@
     "build": "cross-env NODE_ENV=production browserify -g envify src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express-autoload-routes": "^1.2.2",
     "synaptic": "^1.0.11",
     "vue": "^2.0.1"
   },
