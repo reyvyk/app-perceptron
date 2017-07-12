@@ -15,7 +15,7 @@ try {
 
 myNetwork.save = function(filePath) {
   filePath = filePath || backupFile;
-  return new Promise((reject, resolv) => {
+  return new Promise((resolv, reject) => {
     fs.writeFile(filePath, JSON.stringify(this.toJSON()), (err) => {
       if (err) return reject(err);
       resolv();
