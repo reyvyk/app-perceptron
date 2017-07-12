@@ -8,7 +8,7 @@ router.post('/', (req, res, next) => {
   const { salario, idade, moradia, montante, parcelas } = req.body;
 
   let entrySalario = salario > (montante / parcelas) ? 1 : 0;
-  let entryIdade   = idade > 18 ? 1 : 0;
+  let entryIdade   = idade >= 18 ? 1 : 0;
   let entryMoradia = moradia ? 1 : 0;
 
   let result = myNetwork.activate([entryIdade, entrySalario, entryMoradia]);
