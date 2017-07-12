@@ -8,10 +8,14 @@ const app = express();
 /* Middlewares */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(routes);
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 /* Rotas */
+app.use(routes);
 app.get('/', function(req, res) {
   res.send('ta funcionando');
 });
